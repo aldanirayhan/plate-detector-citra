@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Result</h1>
+    </header>
+
+    <main>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        {% if image_path %}
+            <img src="{{ image_path }}" alt="Result Image">
+        {% else %}
+            <p>No result available.</p>
+        {% endif %}
+
+        <p><a href="/">Back to Upload</a></p>
+        <p><a href="/result_images">Lihat Semua Gambar Hasil</a></p>
+    </main>
+</body>
+
+</html>

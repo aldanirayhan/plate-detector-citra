@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Detector</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>License Plate Detector</h1>
+    </header>
+
+    <main>
+        <form id="uploadForm" action="/process" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpg, .jpeg, .png" onchange="previewImage(this)">
+            <button type="button" onclick="detectLicensePlate()">Detect</button>
+        </form>
+
+        <div id="image-preview" style="display: none;">
+            <h2>Selected Image</h2>
+            <img id="preview" alt="Selected Image">
+        </div>
+
+        <p id="errorMessage" style="color: red; display: none;">Gambar plat nomor belum dipilih.</p>
+
+        <p><a href="/result_images">Lihat Semua Gambar Hasil</a></p>
+
+    </main>
+
+    <script>
+        function previewImage(input) {
+            var preview = document.getElementById('preview');
+            var previewContainer = document.getElementById('image-preview');
+            var file = input.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    previewContainer.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '';
+                previewContainer.style.display = 'none';
+            }
+        }
+
+        function detectLicensePlate() {
+            var fileInput = document.querySelector('input[name="file"]');
+            var errorMessage = document.getElementById('errorMessage');
+
+            if (!fileInput.files || !fileInput.files[0]) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                document.getElementById('uploadForm').submit();
+            }
+        }
+    </script>
+</body>
+
+</html>
