@@ -3,6 +3,9 @@ imutils==0.5.4
 numpy==1.26.0
 opencv-python==4.8.1.78
 opencv-python-headless==4.8.1.78
+uuid==1.30
+easyocr==1.7.1
+# akan menginstall yang banyak-banyak, alangkah baiknya liat google dulu supaya hemat space
 torch==2.1.0
 torchvision==0.16.0
-uuid==1.30
+

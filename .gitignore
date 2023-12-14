@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development configuration
+instance/
+
+# Environment variables
+.env
+
+# Compiled Python files
+*.pyc
+
+# Compiled C extensions
+*.so
+
+# Flask debugging logs
+logs/
