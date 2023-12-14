@@ -1,4 +1,4 @@
-Pendeteksi Plat Nomor dengan EasyOCR
+# Pendeteksi Plat Nomor dengan EasyOCR
 
 Pengolahan Citra
 Anggota :
@@ -10,3 +10,4 @@ Anggota :
 # How To Run
 - install requirement.txt
 - python run app.py
+- copy address dan jalankan di brower
